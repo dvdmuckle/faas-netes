@@ -31,7 +31,7 @@ $ kubectl create ns openfaas
 $ kubectl create ns openfaas-fn
 
 $ helm upgrade --install --namespace openfaas \
-    --set functionNamespace=openfaas-fn openfaas openfaas/
+    --set functionNamespace=openfaas-fn openfaas chart/openfaas/
 ```
 
 If you would like to enable asynchronous functions then use `--set async=true`. You can read more about asynchronous functions in the [OpenFaaS guides](https://github.com/openfaas/faas/tree/master/guide).
@@ -45,7 +45,7 @@ In order to make use of automatic ingress settings you will need an IngressContr
 Add `--set ingress.enabled` to enable ingress:
 
 ```
-$ helm upgrade --install --set ingress.enabled=true openfaas openfaas/
+$ helm upgrade --install --set ingress.enabled=true openfaas chart/openfaas/
 ```
 
 By default services will be exposed with following hostnames (can be changed, see values.yaml for details):
